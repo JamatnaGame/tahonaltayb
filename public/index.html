@@ -140,10 +140,7 @@
       font-size: 14px;
     }
 
-    .status-card {
-      padding: 24px;
-    }
-
+    .status-card { padding: 24px; }
     .status-card h3 {
       margin-top: 0;
       margin-bottom: 16px;
@@ -175,10 +172,7 @@
       margin-bottom: 18px;
     }
 
-    .section-card {
-      padding: 18px;
-    }
-
+    .section-card { padding: 18px; }
     .section-title {
       font-size: 26px;
       margin: 0 0 14px;
@@ -210,7 +204,6 @@
       padding-bottom: 6px;
       scrollbar-width: none;
     }
-
     .cat-scroll::-webkit-scrollbar { display: none; }
 
     .cat-btn {
@@ -361,16 +354,8 @@
       font-weight: 700;
     }
 
-    .sticky-panel {
-      position: sticky;
-      top: 92px;
-    }
-
-    .summary-box {
-      padding: 20px;
-      margin-bottom: 16px;
-    }
-
+    .sticky-panel { position: sticky; top: 92px; }
+    .summary-box { padding: 20px; margin-bottom: 16px; }
     .summary-box h3 {
       margin-top: 0;
       margin-bottom: 10px;
@@ -378,16 +363,8 @@
       font-size: 28px;
     }
 
-    .summary-note {
-      color: var(--muted);
-      margin-bottom: 18px;
-      line-height: 1.7;
-    }
-
-    .field {
-      margin-bottom: 12px;
-    }
-
+    .summary-note { color: var(--muted); margin-bottom: 18px; line-height: 1.7; }
+    .field { margin-bottom: 12px; }
     .field label {
       display: block;
       margin-bottom: 8px;
@@ -422,12 +399,7 @@
       font-weight: 700;
     }
 
-    .pay-options {
-      display: grid;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-
+    .pay-options { display: grid; gap: 10px; margin-bottom: 12px; }
     .pay-item {
       display: flex;
       align-items: center;
@@ -438,6 +410,54 @@
       background: #fff;
       font-weight: 700;
       color: var(--primary);
+      cursor: pointer;
+    }
+
+    .payment-box {
+      display: none;
+      background: #fcf7f2;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+      margin: 12px 0;
+    }
+
+    .payment-box.active { display: block; }
+
+    .bank-card {
+      background: #fff;
+      border: 1px dashed #d9c7b9;
+      border-radius: 16px;
+      padding: 14px;
+      margin-bottom: 12px;
+      line-height: 1.9;
+    }
+
+    .bank-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .bank-row strong { color: var(--primary); }
+    .mini-note {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-top: 6px;
+    }
+
+    .copy-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--primary);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-family: inherit;
+      font-weight: 800;
+      cursor: pointer;
     }
 
     .primary-btn, .secondary-btn, .floating-cart {
@@ -510,6 +530,7 @@
       .header-actions { justify-content: flex-start; }
       .products-grid { grid-template-columns: 1fr; }
       .options-row { grid-template-columns: 1fr; }
+      .bank-row { flex-direction: column; }
       .hero-card, .status-card, .summary-box, .section-card, .product-card { border-radius: 18px; }
     }
   </style>
@@ -519,7 +540,7 @@
     <div class="container topbar">
       <div class="brand">
         <h1>🌾 طاحون الطيب</h1>
-        <p>متجر مطور بواجهة حديثة وسلة واضحة وتجهيز للدفع والشحن.</p>
+        <p>متجر مطور بواجهة حديثة وسلة واضحة ودفع عند الاستلام أو تحويل بنكي مع تأكيد يدوي.</p>
       </div>
       <div class="header-actions">
         <a class="pill-btn" href="#productsSection">تصفح المنتجات</a>
@@ -531,26 +552,27 @@
   <main class="container">
     <section class="hero-grid">
       <article class="hero-card">
-        <h2>متجرك الحقيقي أصبح أوضح وأرتب وجاهز نكمل عليه التطوير.</h2>
+        <h2>المتجر الآن يدعم الدفع عند الاستلام والتحويل البنكي بشكل واضح ومرتب.</h2>
         <p>
-          هذه النسخة تجمع بين شكل احترافي وبين منتجاتك الحقيقية الموجودة في الموقع القديم،
-          مع البحث والتصنيفات والسلة وخيارات الطحن والملح ونموذج إتمام الطلب.
+          اختر منتجاتك، أدخل بياناتك، ثم حدّد طريقة الدفع المناسبة. إذا اخترت التحويل البنكي ستظهر لك
+          بيانات البنك والآيبان ورقم مرجع التحويل، وبعدها يتم تأكيد الطلب يدويًا من المتجر.
         </p>
         <div class="features">
           <span class="feature-chip">واجهة عربية RTL</span>
           <span class="feature-chip">بحث سريع</span>
           <span class="feature-chip">تصنيفات واضحة</span>
           <span class="feature-chip">سلة جاهزة</span>
-          <span class="feature-chip">تمهيد للدفع</span>
+          <span class="feature-chip">دفع عند الاستلام</span>
+          <span class="feature-chip">تحويل بنكي</span>
         </div>
       </article>
 
       <aside class="status-card">
         <h3>حالة الربط</h3>
-        <div class="status-row pending"><span>Nitro</span><span id="nitroStatus">قيد الإعداد</span></div>
-        <div class="status-row pending"><span>الدفع</span><span id="paymentStatus">قيد الإعداد</span></div>
+        <div class="status-row pending"><span>Nitro</span><span id="nitroStatus">متبقي الربط</span></div>
+        <div class="status-row"><span>الدفع</span><span id="paymentStatus">جاهز حاليًا</span></div>
         <p style="margin:10px 0 0; color: var(--muted); line-height:1.8;">
-          بعد وضع مفاتيح API وربط الخادم سنحوّل هذه الحالة إلى جاهز، لكن المتجر الآن يحتوي على منتجاتك الحقيقية ويعمل كسلة طلب كاملة.
+          تم تجهيز وسائل الدفع اليدوية داخل المتجر. المرحلة التالية ستكون ربط الشحن فقط، ثم يمكن لاحقًا إضافة بوابة دفع إلكتروني إذا أحببت.
         </p>
       </aside>
     </section>
@@ -574,7 +596,7 @@
       <aside class="sticky-panel">
         <div class="summary-box">
           <h3>إتمام الطلب</h3>
-          <div class="summary-note">أدخل البيانات، راجع السلة، ثم أرسل الطلب. الدفع الإلكتروني والشحن المباشر يضافان بعد ربط المفاتيح.</div>
+          <div class="summary-note">أدخل البيانات، راجع السلة، ثم اختر الدفع عند الاستلام أو التحويل البنكي. عند التحويل البنكي يتم تأكيد الطلب بعد مراجعة التحويل.</div>
 
           <div class="field">
             <label for="customerName">الاسم الكريم</label>
@@ -608,10 +630,36 @@
           </div>
 
           <div class="field">
-            <label>طريقة الدفع الحالية</label>
+            <label>طريقة الدفع</label>
             <div class="pay-options">
-              <label class="pay-item"><input type="radio" name="paymentMethod" value="cod" checked> الدفع عند الاستلام</label>
-              <label class="pay-item"><input type="radio" name="paymentMethod" value="online" disabled> الدفع الإلكتروني (يُفعّل بعد الربط)</label>
+              <label class="pay-item"><input type="radio" name="paymentMethod" value="cod" checked onchange="togglePaymentMethod()"> الدفع عند الاستلام</label>
+              <label class="pay-item"><input type="radio" name="paymentMethod" value="bank" onchange="togglePaymentMethod()"> تحويل بنكي</label>
+            </div>
+          </div>
+
+          <div class="payment-box" id="codBox">
+            <div class="mini-note">
+              سيتم استلام قيمة الطلب عند التسليم أو حسب اتفاق التوصيل مع المتجر. تكلفة الشحن قد تُضاف لاحقًا إذا كانت المدينة خارج الطائف.
+            </div>
+          </div>
+
+          <div class="payment-box" id="bankBox">
+            <div class="bank-card">
+              <div class="bank-row"><span>اسم البنك</span><strong id="bankName">بنك الراجحي</strong></div>
+              <div class="bank-row"><span>اسم المستفيد</span><strong id="bankBeneficiary">طاحون الطيب</strong></div>
+              <div class="bank-row"><span>رقم الآيبان</span><strong id="ibanText">SA0000000000000000000000</strong></div>
+              <button class="copy-btn" type="button" onclick="copyIBAN()">نسخ الآيبان</button>
+            </div>
+            <div class="field">
+              <label for="transferReference">رقم مرجع التحويل</label>
+              <input id="transferReference" class="form-input" placeholder="مثال: 874512369" />
+            </div>
+            <div class="field">
+              <label for="transferSender">اسم المحول</label>
+              <input id="transferSender" class="form-input" placeholder="اسم صاحب الحساب الذي تم منه التحويل" />
+            </div>
+            <div class="mini-note">
+              بعد التحويل أرسل رقم المرجع، وسيتم اعتماد الطلب بعد التحقق من الحوالة. يمكنك لاحقًا إضافة رفع صورة الحوالة إذا رغبت.
             </div>
           </div>
 
@@ -622,7 +670,7 @@
             <div class="row grand"><span>الإجمالي الحالي</span><span id="summaryGrand">0 ريال</span></div>
           </div>
 
-          <button class="primary-btn" onclick="sendOrderWhatsApp()">إرسال الطلب عبر واتساب</button>
+          <button class="primary-btn" onclick="submitOrder()">تأكيد الطلب</button>
           <div style="height:10px"></div>
           <button class="secondary-btn" onclick="clearCart()">تفريغ السلة</button>
         </div>
@@ -642,6 +690,12 @@
   </button>
 
   <script>
+    const BANK_DETAILS = {
+      bankName: 'البنك العربي',
+      beneficiary: 'فايقة احمد',
+      iban: 'SA4330100949000006212732'
+    };
+
     const productsDB = [
       { name: "بر بللسمر عضوي (فياض)", price: 80, category: "البر البلدي", unitType: 3, hasOptions: true, best: true },
       { name: "خلطة السكر والدايت", price: 15, category: "الخلطات", unitType: 1, hasOptions: true, best: true },
@@ -703,15 +757,7 @@
     ].map((p, i) => ({ ...p, id: i }));
 
     const categories = [
-      'الكل',
-      'الأكثر مبيعاً',
-      'البر البلدي',
-      'البر الخارجي',
-      'الحبوب الأخرى',
-      'الخلطات',
-      'البقوليات',
-      'العسل والسمن',
-      'البزار'
+      'الكل', 'الأكثر مبيعاً', 'البر البلدي', 'البر الخارجي', 'الحبوب الأخرى', 'الخلطات', 'البقوليات', 'العسل والسمن', 'البزار'
     ];
 
     let currentCategory = 'الكل';
@@ -720,6 +766,10 @@
 
     const categoriesNav = document.getElementById('categoriesNav');
     const productsGrid = document.getElementById('productsGrid');
+
+    document.getElementById('bankName').innerText = BANK_DETAILS.bankName;
+    document.getElementById('bankBeneficiary').innerText = BANK_DETAILS.beneficiary;
+    document.getElementById('ibanText').innerText = BANK_DETAILS.iban;
 
     function getUnitLabel(type, qty) {
       if (type === 3 || type === 5) return `${qty} مد`;
@@ -860,7 +910,8 @@
         }
       });
 
-      const shippingText = document.getElementById('customerCity').value === 'الطائف' ? 'مجاني داخل الطائف' : 'يحدد لاحقًا';
+      const city = document.getElementById('customerCity').value;
+      const shippingText = city === 'الطائف' ? 'مجاني داخل الطائف' : 'يحدد لاحقًا';
       document.getElementById('summaryItems').innerText = items;
       document.getElementById('summarySubtotal').innerText = `${subtotal} ريال`;
       document.getElementById('summaryShipping').innerText = shippingText;
@@ -891,15 +942,38 @@
       calculateSummary();
     }
 
+    function togglePaymentMethod() {
+      const method = document.querySelector('input[name="paymentMethod"]:checked').value;
+      document.getElementById('codBox').classList.toggle('active', method === 'cod');
+      document.getElementById('bankBox').classList.toggle('active', method === 'bank');
+    }
+
+    async function copyIBAN() {
+      const iban = BANK_DETAILS.iban;
+      try {
+        await navigator.clipboard.writeText(iban);
+        alert('تم نسخ الآيبان.');
+      } catch (e) {
+        alert('انسخ الآيبان يدويًا: ' + iban);
+      }
+    }
+
     function buildOrderMessage() {
       const name = document.getElementById('customerName').value.trim();
       const phone = document.getElementById('customerPhone').value.trim();
       const city = document.getElementById('customerCity').value.trim();
       const notes = document.getElementById('customerNotes').value.trim();
       const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+      const transferReference = document.getElementById('transferReference').value.trim();
+      const transferSender = document.getElementById('transferSender').value.trim();
 
       if (!name || !phone || !city) {
         alert('الرجاء تعبئة الاسم والجوال والمدينة.');
+        return null;
+      }
+
+      if (paymentMethod === 'bank' && (!transferReference || !transferSender)) {
+        alert('الرجاء تعبئة رقم مرجع التحويل واسم المحول.');
         return null;
       }
 
@@ -924,7 +998,18 @@
       message += `👤 الاسم: ${name}%0A`;
       message += `📱 الجوال: ${phone}%0A`;
       message += `📍 المدينة: ${city}%0A`;
-      message += `💳 الدفع: ${paymentMethod === 'cod' ? 'الدفع عند الاستلام' : 'الدفع الإلكتروني'}%0A`;
+
+      if (paymentMethod === 'cod') {
+        message += `💳 الدفع: الدفع عند الاستلام%0A`;
+      } else {
+        message += `💳 الدفع: تحويل بنكي%0A`;
+        message += `🏦 البنك: ${BANK_DETAILS.bankName}%0A`;
+        message += `👤 اسم المستفيد: ${BANK_DETAILS.beneficiary}%0A`;
+        message += `🧾 رقم المرجع: ${transferReference}%0A`;
+        message += `🙍 اسم المحول: ${transferSender}%0A`;
+        message += `⏳ الحالة: بانتظار التحقق من التحويل%0A`;
+      }
+
       message += `---------------------------%0A`;
       message += itemsText;
       message += `---------------------------%0A`;
@@ -934,7 +1019,7 @@
       return message;
     }
 
-    function sendOrderWhatsApp() {
+    function submitOrder() {
       const message = buildOrderMessage();
       if (!message) return;
       window.open(`https://wa.me/966500611770?text=${message}`, '_blank');
@@ -953,6 +1038,7 @@
     buildCategories();
     renderProducts();
     calculateSummary();
+    togglePaymentMethod();
   </script>
 </body>
 </html>
